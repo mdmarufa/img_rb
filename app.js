@@ -82,5 +82,5 @@ router.post("/removeBg", upload.single("img"), async (req, res, next) => {
 app.use(router);
 
 app.listen(3000, () => {
-  console.log("The server is running at localhost:3000");
+  console.log("The server is running");
 });
