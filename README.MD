@@ -6,7 +6,7 @@ The abailable path for request and there responds including success and error.
 
   response
    success res : 
-    1. resType = JSON, statusCode = 200, resObj = { "img": <img src="image source data uri"> }.
+    1. resType = JSON, statusCode = 200, resObj = { "img": "<img src=image source data uri>" }.
    error res : 
     2. resType = JSON, statusCode = 400, resObj = { "title": "This is not image or image url", "msg": "Its look like this is not a image file or not a valid image URL. Please check and try again lager."}.
    error res : 
