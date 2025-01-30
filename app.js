@@ -9,7 +9,7 @@ let currentFileName = null;
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const des = "./upload";
+    const des = "./";
     cb(null, des);
   },
   filename: (req, file, cb) => {
@@ -47,7 +47,7 @@ router.post("/removeBg", upload.single("img"), async (req, res, next) => {
       fileAdd = req.body.url;
     } else {
       originalname = req.file.originalname;
-      fileAdd = `./upload/${currentFileName}`;
+      fileAdd = `./${currentFileName}`;
     }
     const dataUrl = await removeBg(fileAdd);
     if (dataUrl) {
@@ -68,7 +68,7 @@ router.post("/removeBg", upload.single("img"), async (req, res, next) => {
     });
   } finally {
     if (!req.body.url) {
-      unlink(`./upload/${currentFileName}`, (err) => {
+      unlink(`./${currentFileName}`, (err) => {
         if(err) {
           console.log(err)
         }else {
